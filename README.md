@@ -47,7 +47,9 @@ Currently we test `Squirrel` on `Ubuntu 16` and `Ubuntu 18`.
     cd sqlite
     mkdir bld
     cd bld
-    CC=/path/to/afl-gcc CXX=/path/to/afl-g++ ../configure # You can also turn on debug flag if you want to find assertion
+    export CC=~/AFL/afl-gcc
+    export CXX=~/AFL/afl-g++
+    ../configure # You can also turn on debug flag if you want to find assertion
     make
 
     # MySQL/PostgreSQL/MariaDB
