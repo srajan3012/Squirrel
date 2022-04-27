@@ -27,6 +27,7 @@ Currently we test `Squirrel` on `Ubuntu 16` and `Ubuntu 18`.
     sed -i  's/#define MAP_SIZE_POW2       16/#define MAP_SIZE_POW2       18/' config.h
     make
     cd llvm_mode/
+    export LLVM_CONFIG=/usr/bin/llvm-config-6.0 # do "which llvm-config-6.0"
     make
     ```
 
