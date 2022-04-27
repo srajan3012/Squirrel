@@ -49,8 +49,12 @@ Currently we test `Squirrel` on `Ubuntu 16` and `Ubuntu 18`.
     cd bld
     export CC=~/AFL/afl-gcc
     export CXX=~/AFL/afl-g++
+    sudo apt-get install tcl
     ../configure # You can also turn on debug flag if you want to find assertion
     make
+    # in case any error, check if bld/sqlite3.h is empty. 
+    # If yes, delete it and repeat above two steps i.e. ../configure and make
+    # If error persists, Delete bld folder and repeat ../configure and make
 
     # MySQL/PostgreSQL/MariaDB
     cd Squirrel/DBNAME/docker/
