@@ -43,15 +43,21 @@ Currently we test `Squirrel` on `Ubuntu 16` and `Ubuntu 18`.
 4. `Instrument DBMS:`
     ```
     # SQLite:
+    apt-get install libsqlite3-dev
+    apt-get install tcl
+    
     git clone https://github.com/sqlite/sqlite.git
     cd sqlite
+    
     mkdir bld
     cd bld
+    
     export CC=~/AFL/afl-gcc
     export CXX=~/AFL/afl-g++
-    sudo apt-get install tcl
+    
     ../configure # You can also turn on debug flag if you want to find assertion
     make
+    
     # in case any error, check if bld/sqlite3.h is empty. 
     # If yes, delete it and repeat above two steps i.e. ../configure and make
     # If error persists, Delete bld folder and repeat ../configure and make
